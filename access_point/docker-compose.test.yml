@@ -1,0 +1,7 @@
+version: '3.3'
+services:
+  test_access_point:
+    image: ubuntu
+    volumes:
+      - /home/romain/Bureau/PROJETS/Connecktail/setup/access_point:/access_point
+    tty: true
