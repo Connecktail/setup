@@ -8,7 +8,7 @@ CREATE TABLE
 
 CREATE TABLE
     Modules (
-        id BIGINTEGER NOT NULL PRIMARY KEY,
+        id BIGINT NOT NULL PRIMARY KEY,
         ip_address VARCHAR(255) NOT NULL
     );
 
