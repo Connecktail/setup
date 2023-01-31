@@ -40,15 +40,15 @@ echo -n "Specify the password for the access point : "
 read password
 
 cat hostapd.conf | sed -e "s/{{SSID}}/$ssid/" | sed -e "s/{{PASSWORD}}/$password/" > /etc/hostapd/hostapd.conf
-sed -e "s@^#DAEMON_CONF=.*$>@DAEMON_CONF= \"/etc/hostapd/hostapd.conf\"@" /etc/default/hostapd > /etc/default/hostapd
+sed -ei "s@^#DAEMON_CONF=.*$>@DAEMON_CONF= \"/etc/hostapd/hostapd.conf\"@" /etc/default/hostapd
 systemctl unmask hostapd
 systemctl enable hostapd
 systemctl start hostapd
 
 # Enable routing and IP masquerading
-sed -e "s/^#net.ipv4.ip_forward=1$/net.ipv4.ip_forward=1/" /etc/sysctl.conf > /etc/sysctl.conf
+sed -ei "s/^#net.ipv4.ip_forward=1$/net.ipv4.ip_forward=1/" /etc/sysctl.conf
 iptables -t nat -A  POSTROUTING -o eth0 -j MASQUERADE
-netfilter-persistent save
+iptables-save
 
 echo -e "\n Your raspberry pi is configured to be an access point whose :"
 echo -e "\t - SSID is $ssid"
