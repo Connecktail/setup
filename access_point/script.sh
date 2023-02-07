@@ -42,7 +42,7 @@ read password
 
 #FIXME: error on sed
 cat hostapd.conf | sed -e "s/{{SSID}}/$ssid/" | sed -e "s/{{PASSWORD}}/$password/" > /etc/hostapd/hostapd.conf
-sed -ei "s@^#DAEMON_CONF=.*$>@DAEMON_CONF= \"/etc/hostapd/hostapd.conf\"@" /etc/default/hostapd
+cat /etc/default/hostapd | sed -e "s/^#DAEMON_CONF=.*$/DAEMON_CONF=\"\/etc\/hostapd\/hostapd.conf\"/" > /etc/default/hostapd
 systemctl unmask hostapd
 systemctl enable hostapd
 systemctl start hostapd
