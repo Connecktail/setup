@@ -10,6 +10,7 @@ git clone https://github.com/Theldus/wsServer
 cd wsServer/
 make
 make install
+ldconfig
 
 #how to use the lib in compilation :
 # gcc test.c -lws -lpthread -o test

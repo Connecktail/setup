@@ -12,6 +12,7 @@ cd build
 cmake ../cJSON
 make
 make install
+ldconfig
 
 #how to use the lib in compilation :
 # gcc test.c -lcjson -o test

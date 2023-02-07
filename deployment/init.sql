@@ -2,32 +2,35 @@ CREATE TABLE
     Bottles (
         id BIGSERIAL PRIMARY KEY,
         quantity FLOAT NOT NULL,
-        url VARCHAR(255) NOT NULL,
-        id_module BIGINT
+        url TEXT NOT NULL,
+        id_module MACADDR
     );
 
 CREATE TABLE
     Modules (
-        id BIGINT NOT NULL PRIMARY KEY,
-        ip_address VARCHAR(255) NOT NULL
+        mac_address MACADDR NOT NULL PRIMARY KEY,
+        ip_address INET NOT NULL
     );
 
 ALTER TABLE Bottles
 ADD
-    FOREIGN KEY (id_module) REFERENCES Modules(id);
+    FOREIGN KEY (id_module) REFERENCES Modules(mac_address);
 
 CREATE TABLE
     Cocktails(
         id BIGSERIAL PRIMARY KEY,
+        name TEXT NOT NULL,
+        description TEXT NOT NULL,
         price FLOAT NOT NULL,
-        image VARCHAR(255) NOT NULL
+        image_url TEXT NOT NULL,
+        personalized BOOLEAN
     );
 
 CREATE TABLE
     Steps(
         id BIGSERIAL PRIMARY KEY,
         quantity FLOAT NOT NULL,
-        description VARCHAR(255) NOT NULL,
+        description TEXT,
         id_cocktail BIGINT NOT NULL,
         id_bottle BIGINT NOT NULL
     );
@@ -42,7 +45,8 @@ CREATE TABLE
     Orders(
         id BIGSERIAL PRIMARY KEY,
         date DATE NOT NULL,
-        price FLOAT NOT NULL
+        price FLOAT NOT NULL,
+        status BOOLEAN
     );
 
 CREATE TABLE

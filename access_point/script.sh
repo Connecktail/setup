@@ -39,6 +39,8 @@ read ssid
 echo -n "Specify the password for the access point : "
 read password
 
+
+#FIXME: error on sed
 cat hostapd.conf | sed -e "s/{{SSID}}/$ssid/" | sed -e "s/{{PASSWORD}}/$password/" > /etc/hostapd/hostapd.conf
 sed -ei "s@^#DAEMON_CONF=.*$>@DAEMON_CONF= \"/etc/hostapd/hostapd.conf\"@" /etc/default/hostapd
 systemctl unmask hostapd

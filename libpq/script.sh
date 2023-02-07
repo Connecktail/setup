@@ -7,6 +7,7 @@ then
 fi
 
 apt-get install libpq-dev -yqqq
+ldconfig
 
 #how to use the lib in compilation :
 # gcc test.c -lpq -o test
