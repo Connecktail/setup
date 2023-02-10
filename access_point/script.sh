@@ -36,8 +36,14 @@ echo -e "done\n"
 # Configure the access point host software
 echo -n "Specify the SSID for the access point : "
 read ssid
-echo -n "Specify the password for the access point : "
+echo -n "Specify the password for the access point (min-8): "
 read password
+while [ ${#password} -le 8 ]
+do
+    echo "The password must be at least 8 characters long"
+    echo -n "Specify the password for the access point (min-8): "
+    read password
+done
 
 
 #FIXME: error on sed

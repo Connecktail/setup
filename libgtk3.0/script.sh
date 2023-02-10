@@ -8,5 +8,6 @@ fi
 
 # Install dependencies
 echo -n "Installing development lib for gtk3.0..."
-apt-get install -yqqq libgtk3.0-dev
+apt-get update -qqq
+apt-get install -yqqq libgtk-3-dev
 echo "done"
