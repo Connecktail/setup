@@ -6,6 +6,7 @@ then
     exit
 fi
 
+apt install -yqqq cmake
 git clone https://github.com/DaveGamble/cJSON.git
 mkdir build
 cd build
