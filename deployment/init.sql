@@ -1,9 +1,11 @@
 CREATE TABLE
     Bottles (
         id BIGSERIAL PRIMARY KEY,
+        name TEXT NOT NULL,
         quantity FLOAT NOT NULL,
         url TEXT NOT NULL,
-        id_module MACADDR
+        id_module MACADDR,
+        price FLOAT NOT NULL
     );
 
 CREATE TABLE
@@ -32,7 +34,8 @@ CREATE TABLE
         quantity FLOAT NOT NULL,
         description TEXT,
         id_cocktail BIGINT NOT NULL,
-        id_bottle BIGINT NOT NULL
+        id_bottle BIGINT NOT NULL,
+        message TEXT
     );
 
 ALTER TABLE Steps
