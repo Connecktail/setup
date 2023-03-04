@@ -3,4 +3,6 @@ deployment/.env
 libcJSON/build
 libcJSON/cJSON
 
-ilbwsServer/wsServer
+libwsServer/wsServer/
+
+.vscode
