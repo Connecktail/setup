@@ -49,4 +49,9 @@ then
     exit
 fi
 
+echo "Creating the repository /etc/connecktail"
+mkdir -p /etc/connecktail
+echo "Creating the /etc/connecktail/msq file for the message queue"
+touch /etc/connecktail/msq
+
 docker compose up -d

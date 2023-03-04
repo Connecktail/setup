@@ -1,11 +1,7 @@
 CREATE TABLE
     Bottles (
         id BIGSERIAL PRIMARY KEY,
-<<<<<<< Updated upstream
         name TEXT NOT NULL,
-=======
-        name  TEXT NOT NULL,
->>>>>>> Stashed changes
         quantity FLOAT NOT NULL,
         url TEXT NOT NULL,
         id_module MACADDR,
