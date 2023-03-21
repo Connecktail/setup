@@ -53,5 +53,7 @@ echo "Creating the repository /etc/connecktail"
 mkdir -p /etc/connecktail
 echo "Creating the /etc/connecktail/msq file for the message queue"
 touch /etc/connecktail/msq
+echo "Creating the /etc/connecktail/shm file for the shared memory"
+touch /etc/connecktail/shm
 
 docker compose up -d
