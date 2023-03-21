@@ -47,7 +47,7 @@ ALTER TABLE Steps ADD FOREIGN KEY (id_bottle) REFERENCES Bottles(id);
 CREATE TABLE
     Orders(
         id BIGSERIAL PRIMARY KEY,
-        date DATE NOT NULL,
+        date TIMESTAMP NOT NULL,
         price FLOAT NOT NULL,
         status BOOLEAN
     );
