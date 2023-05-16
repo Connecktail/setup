@@ -11,7 +11,8 @@ CREATE TABLE
 CREATE TABLE
     Modules (
         mac_address MACADDR NOT NULL PRIMARY KEY,
-        ip_address INET NOT NULL
+        ip_address INET NOT NULL,
+        battery_level SMALLINT NOT NULL
     );
 
 ALTER TABLE Bottles
