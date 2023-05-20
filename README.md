@@ -13,6 +13,7 @@ It includes :
   - The libgtk3.0 library
   - The libws library
   - The libpq library
+  - The libcurl library
 - The deployment of the database
 
 ## How to use :
